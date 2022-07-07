@@ -4,7 +4,7 @@
     Dim _businessLogicLayer As BusinessLogicLayer
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        _businessLogicLayer = New BusinessLogicLayer
+        _businessLogicLayer = New BusinessLogicLayer()
     End Sub
 
     Private Sub cmdGuardar_Click(sender As Object, e As EventArgs) Handles cmdGuardar.Click

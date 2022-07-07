@@ -8,12 +8,21 @@ Public Class BusinessLogicLayer
         _dataAccessLayer = New DataAccessLayer()
     End Sub
 
-    Public Sub GuardarCliente(Cli As Cliente)
+    Public Sub GuardarCliente(objCliente As Cliente)
 
-        If Cli.IdCliente = 0 Then
-            _dataAccessLayer.InsertarCliente(Cli)
+        If objCliente.IdCliente = 0 Then
+            _dataAccessLayer.InsertarCliente(objCliente)
         Else
             '_dataAccessLayer.ActualizarCliente()
+        End If
+    End Sub
+
+    Public Sub GuardarTransporte(objTransporte As Transporte)
+
+        If objTransporte.IdTransporte = 0 Then
+            '_dataAccessLayer.InsertarTransporte(objTransporte)
+        Else
+            '_dataAccessLayer.ActualizarTransporte(objTransporte)
         End If
     End Sub
 End Class

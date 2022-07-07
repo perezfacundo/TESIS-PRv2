@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="agregarCliente.aspx" />
+    <Content Include="agregarTransporte.aspx" />
     <Content Include="login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -102,6 +103,13 @@
     </Compile>
     <Compile Include="agregarCliente.aspx.vb">
       <DependentUpon>agregarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="agregarTransporte.aspx.designer.vb">
+      <DependentUpon>agregarTransporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="agregarTransporte.aspx.vb">
+      <DependentUpon>agregarTransporte.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="BusinessLogicLayer.vb" />
@@ -133,6 +141,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Transporte.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
