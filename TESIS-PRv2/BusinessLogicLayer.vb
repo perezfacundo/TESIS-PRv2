@@ -1,11 +1,9 @@
 ﻿Imports TESIS_PRv2.Cliente
 
 Public Class BusinessLogicLayer
-
-    Private _dataAccessLayer As DataAccessLayer
-
+    Dim _dataAccessLayer As New DataAccessLayer()
     Public Sub BusinessLogicLayer()
-        _dataAccessLayer = New DataAccessLayer()
+
     End Sub
 
     Public Sub GuardarCliente(objCliente As Cliente)
@@ -17,12 +15,15 @@ Public Class BusinessLogicLayer
         End If
     End Sub
 
-    Public Sub GuardarTransporte(objTransporte As Transporte)
+    Public Function GuardarTransporte(objTransporte As Transporte)
 
         If objTransporte.IdTransporte = 0 Then
-            '_dataAccessLayer.InsertarTransporte(objTransporte)
+            _dataAccessLayer.InsertarTransporte(objTransporte)
         Else
             '_dataAccessLayer.ActualizarTransporte(objTransporte)
         End If
-    End Sub
+
+        Return objTransporte
+
+    End Function
 End Class

@@ -50,15 +50,6 @@ Partial Public Class agregarTransporte
     Protected WithEvents txtModelo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txtIdEstado.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtIdEstado As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
     '''Control txtCapacidad.
     '''</summary>
     '''<remarks>
@@ -66,15 +57,6 @@ Partial Public Class agregarTransporte
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents txtCapacidad As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''Control txtTipoRegistro.
-    '''</summary>
-    '''<remarks>
-    '''Campo generado automáticamente.
-    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-    '''</remarks>
-    Protected WithEvents txtTipoRegistro As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control cmdGuardar.

@@ -1,10 +1,10 @@
 ﻿Public Class agregarTransporte
     Inherits System.Web.UI.Page
 
-    Dim _businessLogicLayer As BusinessLogicLayer
+    Dim _businessLogicLayer As New BusinessLogicLayer()
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        _businessLogicLayer = New BusinessLogicLayer()
+
     End Sub
 
     Private Sub cmdGuardar_Click(sender As Object, e As EventArgs) Handles cmdGuardar.Click
@@ -17,7 +17,7 @@
         objTransporte.Capacidad = txtCapacidad.Text
         objTransporte.IdTipoRegistro = 7
 
-        '_businessLogicLayer.Save
+        _businessLogicLayer.GuardarTransporte(objTransporte)
 
     End Sub
 End Class

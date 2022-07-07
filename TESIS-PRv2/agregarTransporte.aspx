@@ -19,15 +19,15 @@
             Modelo:<asp:TextBox ID="txtModelo" runat="server"></asp:TextBox>
             <br />
             <br />
-            idEstado:<asp:TextBox ID="txtIdEstado" runat="server"></asp:TextBox>
+            <%--idEstado:<asp:TextBox ID="txtIdEstado" runat="server"></asp:TextBox>
             <br />
-            <br />
+            <br />--%>
             Capacidad:<asp:TextBox ID="txtCapacidad" runat="server"></asp:TextBox>
             <br />
             <br />
-            idTipo Registro:<asp:TextBox ID="txtTipoRegistro" runat="server"></asp:TextBox>
+            <%--idTipo Registro:<asp:TextBox ID="txtTipoRegistro" runat="server"></asp:TextBox>
             <br />
-            <br />
+            <br />--%>
             <asp:Button ID="cmdGuardar" runat="server" Text="Guardar" />
             <asp:Button ID="cmdCancelar" runat="server" Text="Cancelar" />
         </div>
