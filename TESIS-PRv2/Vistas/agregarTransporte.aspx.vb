@@ -2,14 +2,17 @@
     Inherits System.Web.UI.Page
 
     Dim _businessLogicLayer As New BusinessLogicLayer()
+    Dim objTransporte As New Transporte()
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
 
     Private Sub cmdGuardar_Click(sender As Object, e As EventArgs) Handles cmdGuardar.Click
+        GuardarTransporte()
+    End Sub
 
-        Dim objTransporte As Transporte = New Transporte()
+    Public Sub GuardarTransporte()
         objTransporte.Patente = txtPatente.Text
         objTransporte.Marca = txtMarca.Text
         objTransporte.Modelo = txtModelo.Text
@@ -18,6 +21,5 @@
         objTransporte.IdTipoRegistro = 7
 
         _businessLogicLayer.GuardarTransporte(objTransporte)
-
     End Sub
 End Class

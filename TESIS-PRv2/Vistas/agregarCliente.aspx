@@ -35,10 +35,20 @@
             Correo<asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox>
             <br />
             <br />
-            Provincia<asp:TextBox ID="txtProvincia" runat="server"></asp:TextBox>
+
+            Provincia<asp:DropDownList ID="ddlProvincia" runat="server"  DataTextField="Provincia" DataValueField="idProvincia" AutoPostBack="True" DataSourceID="SqlDataSource1"></asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TESIS-PRv2ConnectionString %>" SelectCommand="SELECT [idProvincia], [Provincia] FROM [Provincias]"></asp:SqlDataSource>
             <br />
             <br />
-            Localidad<asp:TextBox ID="txtLocalidad" runat="server"></asp:TextBox>
+
+            Localidad<asp:DropDownList ID="ddlLocalidad" runat="server" DataTextField="Localidad" DataValueField="idLocalidad" AutoPostBack="True" DataSourceID="SqlDataSource2"></asp:DropDownList>
+
+            <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:TESIS-PRv2ConnectionString %>" SelectCommand="SELECT idLocalidad, Localidad FROM Localidades WHERE idProvincia = @idProvincia">
+                <SelectParameters>
+                    <asp:ControlParameter ControlID="ddlProvincia" Name="idProvincia" PropertyName="SelectedValue" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+
             <br />
             <br />
             <asp:Button ID="cmdGuardar" runat="server" Text="Guardar" />
