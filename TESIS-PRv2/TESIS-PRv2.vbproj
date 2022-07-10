@@ -92,33 +92,37 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="agregarCliente.aspx" />
-    <Content Include="agregarTransporte.aspx" />
-    <Content Include="login.aspx" />
+    <Content Include="Vistas\agregarCliente.aspx" />
+    <Content Include="Vistas\agregarTransporte.aspx" />
+    <Content Include="Vistas\login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="agregarCliente.aspx.designer.vb">
+    <Compile Include="Modelos\Empleado.vb" />
+    <Compile Include="Modelos\Solicitud.vb" />
+    <Compile Include="Modelos\SolicitudesEmpleados.vb" />
+    <Compile Include="Modelos\SolicitudesTransportes.vb" />
+    <Compile Include="Vistas\agregarCliente.aspx.designer.vb">
       <DependentUpon>agregarCliente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="agregarCliente.aspx.vb">
+    <Compile Include="Vistas\agregarCliente.aspx.vb">
       <DependentUpon>agregarCliente.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="agregarTransporte.aspx.designer.vb">
+    <Compile Include="Vistas\agregarTransporte.aspx.designer.vb">
       <DependentUpon>agregarTransporte.aspx</DependentUpon>
     </Compile>
-    <Compile Include="agregarTransporte.aspx.vb">
+    <Compile Include="Vistas\agregarTransporte.aspx.vb">
       <DependentUpon>agregarTransporte.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="BusinessLogicLayer.vb" />
-    <Compile Include="Cliente.vb" />
-    <Compile Include="DataAccessLayer.vb" />
-    <Compile Include="login.aspx.designer.vb">
+    <Compile Include="Controladores\BusinessLogicLayer.vb" />
+    <Compile Include="Modelos\Cliente.vb" />
+    <Compile Include="Controladores\DataAccessLayer.vb" />
+    <Compile Include="Vistas\login.aspx.designer.vb">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="login.aspx.vb">
+    <Compile Include="Vistas\login.aspx.vb">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
@@ -141,7 +145,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Transporte.vb" />
+    <Compile Include="Modelos\Transporte.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
