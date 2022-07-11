@@ -52,7 +52,7 @@ Public Class DataAccessLayer
         Try
             conn.Open()
             Dim consulta As String = $"INSERT INTO Transportes (patente, marca, modelo, idEstado, capacidad, idTipoRegistro) 
-                                        VALUES (@patente, @marca, @modelo, @idEstado, @capacidad, @idTipoRegistro)"
+                                              VALUES (@patente, @marca, @modelo, @idEstado, @capacidad, @idTipoRegistro)"
 
             Dim patente As SqlParameter = New SqlParameter("@patente", objTransporte.Patente)
             Dim marca As SqlParameter = New SqlParameter("@marca", objTransporte.Marca)
@@ -80,4 +80,27 @@ Public Class DataAccessLayer
 
     End Sub
 
+    Public Sub InsertarEmpleado(objEmpleado As Empleado)
+
+        Try
+            conn.Open()
+            Dim Consulta As String = $"INSERT INTO Empleados (dniEmpleado, apellidos, nombres, fechaNac, porcComision, idEstado, clave, correo, idTipoRegistro) 
+                                              VALUES (@dniEmpleado, @apellidos, @nombres, @fechaNac, @porcComision, @idEstado, @clave, @correo, @idTipoRegistro)"
+
+            Dim dniEmpleado As SqlParameter = New SqlParameter("@dniEmpleado", objEmpleado.DniEmpleado)
+            Dim apellidos As SqlParameter = New SqlParameter("@apellidos", objEmpleado.Apellidos)
+            Dim nombres As SqlParameter = New SqlParameter("@nombres", objEmpleado.Nombres)
+            Dim fechaNac As SqlParameter = New SqlParameter("@fechaNac", objEmpleado.FechaNac)
+            Dim porcComision As SqlParameter = New SqlParameter("@porcComision", objEmpleado.PorcComision)
+            Dim clave As SqlParameter = New SqlParameter("@clave", objEmpleado.Clave)
+            Dim correo As SqlParameter = New SqlParameter("@correo", objEmpleado.Correo)
+            Dim idTipoRegistro As SqlParameter = New SqlParameter("@idTipoRegistro", objEmpleado.IdTipoRegistro)
+
+            Dim command As SqlCommand = New SqlCommand(Consulta, conn)
+
+            comand
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

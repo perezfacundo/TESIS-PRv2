@@ -1,5 +1,15 @@
 ﻿Public Class Empleado
 
+    Private _idEmpleado As Integer
+    Public Property IdEmpleado() As Integer
+        Get
+            Return _idEmpleado
+        End Get
+        Set(ByVal value As Integer)
+            _idEmpleado = value
+        End Set
+    End Property
+
     Private _dniEmpleado As Integer
     Public Property DniEmpleado() As Integer
         Get

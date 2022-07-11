@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Vistas\agregarCliente.aspx" />
+    <Content Include="Vistas\agregarEmpleado.aspx" />
     <Content Include="Vistas\agregarTransporte.aspx" />
     <Content Include="Vistas\login.aspx" />
     <Content Include="Web.config" />
@@ -107,6 +108,13 @@
     </Compile>
     <Compile Include="Vistas\agregarCliente.aspx.vb">
       <DependentUpon>agregarCliente.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\agregarEmpleado.aspx.designer.vb">
+      <DependentUpon>agregarEmpleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\agregarEmpleado.aspx.vb">
+      <DependentUpon>agregarEmpleado.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Vistas\agregarTransporte.aspx.designer.vb">

@@ -1,7 +1,7 @@
 ﻿Public Class agregarTransporte
     Inherits System.Web.UI.Page
 
-    Dim _businessLogicLayer As New BusinessLogicLayer()
+    Private _businessLogicLayer As New BusinessLogicLayer()
     Dim objTransporte As New Transporte()
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -12,7 +12,7 @@
         GuardarTransporte()
     End Sub
 
-    Public Sub GuardarTransporte()
+    Private Sub GuardarTransporte()
         objTransporte.Patente = txtPatente.Text
         objTransporte.Marca = txtMarca.Text
         objTransporte.Modelo = txtModelo.Text

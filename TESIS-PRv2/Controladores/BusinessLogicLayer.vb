@@ -13,6 +13,7 @@ Public Class BusinessLogicLayer
         Else
             '_dataAccessLayer.ActualizarCliente()
         End If
+
     End Sub
 
     Public Function GuardarTransporte(objTransporte As Transporte)
@@ -27,4 +28,12 @@ Public Class BusinessLogicLayer
 
     End Function
 
+    Public Function GuardarEmpleado(objEmpleado As Empleado)
+
+        If objEmpleado.IdEmpleado = 0 Then
+            _dataAccessLayer.InsertarEmpleado(objEmpleado)
+        Else
+            '_dataAccessLayer.ActualizarEmpleado(objEmpleado)
+        End If
+    End Function
 End Class
