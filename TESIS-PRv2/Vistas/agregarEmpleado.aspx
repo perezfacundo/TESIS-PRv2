@@ -25,7 +25,8 @@
             Porcentaje de Comision: <asp:TextBox ID="txtPorcComision" runat="server"></asp:TextBox>
             <br />
             <br />
-            Estado: <asp:DropDownList ID="ddlEstado" runat="server"></asp:DropDownList>
+            Estado: <asp:DropDownList ID="ddlEstado" runat="server" DataSourceID="SqlDataSource1" DataTextField="descripcion" DataValueField="idEstado"></asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:TESIS-PRv2ConnectionString %>" SelectCommand="SELECT * FROM Estados WHERE idTipoRegistro = 2"></asp:SqlDataSource>
             <br />
             <br />
             Clave: <asp:TextBox ID="txtClave" runat="server"></asp:TextBox>

@@ -2,9 +2,6 @@
 
 Public Class BusinessLogicLayer
     Dim _dataAccessLayer As New DataAccessLayer()
-    Public Sub BusinessLogicLayer()
-
-    End Sub
 
     Public Sub GuardarCliente(objCliente As Cliente)
 
@@ -28,12 +25,12 @@ Public Class BusinessLogicLayer
 
     End Function
 
-    Public Function GuardarEmpleado(objEmpleado As Empleado)
+    Public Sub GuardarEmpleado(objEmpleado As Empleado)
 
         If objEmpleado.IdEmpleado = 0 Then
             _dataAccessLayer.InsertarEmpleado(objEmpleado)
         Else
             '_dataAccessLayer.ActualizarEmpleado(objEmpleado)
         End If
-    End Function
+    End Sub
 End Class

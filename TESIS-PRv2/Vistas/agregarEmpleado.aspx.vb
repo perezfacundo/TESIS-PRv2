@@ -18,9 +18,23 @@
         objEmpleado.Nombres = txtNombres.Text
         objEmpleado.FechaNac = txtFechaNac.Text
         objEmpleado.PorcComision = txtPorcComision.Text
-        objEmpleado.DniEmpleado = txtDNI.Text
-        objEmpleado.DniEmpleado = txtDNI.Text
+        objEmpleado.IdEstado = ddlEstado.SelectedValue
+        objEmpleado.Clave = txtClave.Text
+        objEmpleado.Correo = txtCorreo.Text
+        objEmpleado.IdTipoRegistro = 2
 
         _businessLogicLayer.GuardarEmpleado(objEmpleado)
+    End Sub
+
+    Private Sub cmdCancelar_Click(sender As Object, e As EventArgs) Handles cmdCancelar.Click
+        txtDNI.Text = String.Empty
+        txtApellidos.Text = String.Empty
+        txtNombres.Text = String.Empty
+        txtFechaNac.Text = String.Empty
+        txtPorcComision.Text = String.Empty
+        ddlEstado.SelectedIndex = 0
+        txtClave.Text = String.Empty
+        txtCorreo.Text = String.Empty
+
     End Sub
 End Class

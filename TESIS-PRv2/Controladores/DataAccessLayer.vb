@@ -41,7 +41,7 @@ Public Class DataAccessLayer
 
             command.ExecuteNonQuery()
         Catch ex As Exception
-            Debug.WriteLine("Ocurrio un error al insertar el registro")
+            Debug.WriteLine("ERROR:" & ex.Message)
         Finally
             conn.Close()
         End Try
@@ -73,7 +73,7 @@ Public Class DataAccessLayer
             command.ExecuteNonQuery()
 
         Catch ex As Exception
-            Debug.WriteLine("Ocurrio un error al insertar el registro")
+            Debug.WriteLine("ERROR:" & ex.Message)
         Finally
             conn.Close()
         End Try
@@ -84,23 +84,38 @@ Public Class DataAccessLayer
 
         Try
             conn.Open()
-            Dim Consulta As String = $"INSERT INTO Empleados (dniEmpleado, apellidos, nombres, fechaNac, porcComision, idEstado, clave, correo, idTipoRegistro) 
+            Dim consulta As String = $"INSERT INTO Empleados (dniEmpleado, apellidos, nombres, fechaNac, porcComision, idEstado, clave, correo, idTipoRegistro) 
                                               VALUES (@dniEmpleado, @apellidos, @nombres, @fechaNac, @porcComision, @idEstado, @clave, @correo, @idTipoRegistro)"
 
-            Dim dniEmpleado As SqlParameter = New SqlParameter("@dniEmpleado", objEmpleado.DniEmpleado)
-            Dim apellidos As SqlParameter = New SqlParameter("@apellidos", objEmpleado.Apellidos)
-            Dim nombres As SqlParameter = New SqlParameter("@nombres", objEmpleado.Nombres)
-            Dim fechaNac As SqlParameter = New SqlParameter("@fechaNac", objEmpleado.FechaNac)
-            Dim porcComision As SqlParameter = New SqlParameter("@porcComision", objEmpleado.PorcComision)
-            Dim clave As SqlParameter = New SqlParameter("@clave", objEmpleado.Clave)
-            Dim correo As SqlParameter = New SqlParameter("@correo", objEmpleado.Correo)
-            Dim idTipoRegistro As SqlParameter = New SqlParameter("@idTipoRegistro", objEmpleado.IdTipoRegistro)
+            Dim dniEmpleado As New SqlParameter("@dniEmpleado", objEmpleado.DniEmpleado)
+            Dim apellidos As New SqlParameter("@apellidos", objEmpleado.Apellidos)
+            Dim nombres As New SqlParameter("@nombres", objEmpleado.Nombres)
+            Dim fechaNac As New SqlParameter("@fechaNac", objEmpleado.FechaNac)
+            Dim porcComision As New SqlParameter("@porcComision", objEmpleado.PorcComision)
+            Dim idEstado As New SqlParameter("@idEstado", objEmpleado.IdEstado)
+            Dim clave As New SqlParameter("@clave", objEmpleado.Clave)
+            Dim correo As New SqlParameter("@correo", objEmpleado.Correo)
+            Dim idTipoRegistro As New SqlParameter("@idTipoRegistro", objEmpleado.IdTipoRegistro)
 
-            Dim command As SqlCommand = New SqlCommand(Consulta, conn)
+            Dim Command As New SqlCommand(consulta, conn)
 
-            comand
+            Command.Parameters.Add(dniEmpleado)
+            Command.Parameters.Add(apellidos)
+            Command.Parameters.Add(nombres)
+            Command.Parameters.Add(fechaNac)
+            Command.Parameters.Add(porcComision)
+            Command.Parameters.Add(idEstado)
+            Command.Parameters.Add(clave)
+            Command.Parameters.Add(correo)
+            Command.Parameters.Add(idTipoRegistro)
+
+            Command.ExecuteNonQuery()
+
         Catch ex As Exception
-
+            Debug.WriteLine("ERROR:" & ex.Message)
+        Finally
+            conn.Close()
         End Try
+
     End Sub
 End Class
