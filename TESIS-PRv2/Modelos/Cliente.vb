@@ -72,13 +72,13 @@ Public Class Cliente
         End Set
     End Property
 
-    Private _idEstado As Integer
-    Public Property IdEstado() As Integer
+    Private _Estado As String
+    Public Property Estado() As String
         Get
-            Return _idEstado
+            Return _Estado
         End Get
-        Set(ByVal value As Integer)
-            _idEstado = value
+        Set(ByVal value As String)
+            _Estado = value
         End Set
     End Property
 
@@ -102,23 +102,23 @@ Public Class Cliente
         End Set
     End Property
 
-    Private _idProvincia As Integer
-    Public Property IdProvincia() As Integer
+    Private _provincia As String
+    Public Property Provincia() As String
         Get
-            Return _idProvincia
+            Return _provincia
         End Get
-        Set(ByVal value As Integer)
-            _idProvincia = value
+        Set(ByVal value As String)
+            _provincia = value
         End Set
     End Property
 
-    Private _idLocalidad As Integer
-    Public Property IdLocalidad() As Integer
+    Private _localidad As String
+    Public Property Localidad() As String
         Get
-            Return _idLocalidad
+            Return _localidad
         End Get
-        Set(ByVal value As Integer)
-            _idLocalidad = value
+        Set(ByVal value As String)
+            _localidad = value
         End Set
     End Property
 

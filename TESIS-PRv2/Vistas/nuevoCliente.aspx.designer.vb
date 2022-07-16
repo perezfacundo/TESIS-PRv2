@@ -77,13 +77,40 @@ Partial Public Class agregarCliente
     Protected WithEvents txtDomicilio As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''Control txtClave.
+    '''Control ddlEstado.
     '''</summary>
     '''<remarks>
     '''Campo generado automáticamente.
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
-    Protected WithEvents txtClave As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlEstado As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''Control SqlDataSource3.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents SqlDataSource3 As Global.System.Web.UI.WebControls.SqlDataSource
+
+    '''<summary>
+    '''Control txtClave1.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtClave1 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''Control txtClave2.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents txtClave2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''Control txtCorreo.
@@ -147,4 +174,13 @@ Partial Public Class agregarCliente
     '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
     '''</remarks>
     Protected WithEvents cmdCancelar As Global.System.Web.UI.WebControls.Button
+
+    '''<summary>
+    '''Control lblResultado.
+    '''</summary>
+    '''<remarks>
+    '''Campo generado automáticamente.
+    '''Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+    '''</remarks>
+    Protected WithEvents lblResultado As Global.System.Web.UI.WebControls.Label
 End Class

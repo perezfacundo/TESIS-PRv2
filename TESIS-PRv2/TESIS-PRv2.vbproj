@@ -92,36 +92,47 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Vistas\agregarCliente.aspx" />
-    <Content Include="Vistas\agregarEmpleado.aspx" />
-    <Content Include="Vistas\agregarTransporte.aspx" />
+    <Content Include="Vistas\CERegistros.aspx" />
+    <Content Include="Vistas\nuevoCliente.aspx" />
+    <Content Include="Vistas\nuevoEmpleado.aspx" />
+    <Content Include="Vistas\nuevoTransporte.aspx" />
     <Content Include="Vistas\login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Modelos\Empleado.vb" />
+    <Compile Include="Modelos\Estado.vb" />
+    <Compile Include="Modelos\Localidad.vb" />
+    <Compile Include="Modelos\Provincia.vb" />
     <Compile Include="Modelos\Solicitud.vb" />
     <Compile Include="Modelos\SolicitudesEmpleados.vb" />
     <Compile Include="Modelos\SolicitudesTransportes.vb" />
-    <Compile Include="Vistas\agregarCliente.aspx.designer.vb">
-      <DependentUpon>agregarCliente.aspx</DependentUpon>
+    <Compile Include="Vistas\CERegistros.aspx.designer.vb">
+      <DependentUpon>CERegistros.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\agregarCliente.aspx.vb">
-      <DependentUpon>agregarCliente.aspx</DependentUpon>
+    <Compile Include="Vistas\CERegistros.aspx.vb">
+      <DependentUpon>CERegistros.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Vistas\agregarEmpleado.aspx.designer.vb">
-      <DependentUpon>agregarEmpleado.aspx</DependentUpon>
+    <Compile Include="Vistas\nuevoCliente.aspx.designer.vb">
+      <DependentUpon>nuevoCliente.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\agregarEmpleado.aspx.vb">
-      <DependentUpon>agregarEmpleado.aspx</DependentUpon>
+    <Compile Include="Vistas\nuevoCliente.aspx.vb">
+      <DependentUpon>nuevoCliente.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Vistas\agregarTransporte.aspx.designer.vb">
-      <DependentUpon>agregarTransporte.aspx</DependentUpon>
+    <Compile Include="Vistas\nuevoEmpleado.aspx.designer.vb">
+      <DependentUpon>nuevoEmpleado.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\agregarTransporte.aspx.vb">
-      <DependentUpon>agregarTransporte.aspx</DependentUpon>
+    <Compile Include="Vistas\nuevoEmpleado.aspx.vb">
+      <DependentUpon>nuevoEmpleado.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Vistas\nuevoTransporte.aspx.designer.vb">
+      <DependentUpon>nuevoTransporte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\nuevoTransporte.aspx.vb">
+      <DependentUpon>nuevoTransporte.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Controladores\BusinessLogicLayer.vb" />

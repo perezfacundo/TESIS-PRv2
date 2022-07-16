@@ -2,9 +2,13 @@
 
 Public Class DataAccessLayer
 
-    Dim conn As SqlConnection = New SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=TESIS-PRv2;Data Source=DESKTOP-KVJJO39\SQLEXPRESS")
+    'Dim conn As SqlConnection = New SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=TESIS-PRv2;Data Source=DESKTOP-KVJJO39\SQLEXPRESS")
+    ReadOnly conn As New SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=TESIS-PRv2;Data Source=DESKTOP-KVJJO39\SQLEXPRESS")
+    Dim filasAfectadas As Integer = 0
 
-    Public Sub InsertarCliente(objCliente As Cliente)
+    'METODOS DE INSERCION
+
+    Public Function InsertarCliente(objCliente As Cliente)
 
         Try
             conn.Open()
@@ -17,11 +21,11 @@ Public Class DataAccessLayer
             Dim fechaNac As SqlParameter = New SqlParameter("@fechaNac", objCliente.FechaNac)
             Dim telefono As SqlParameter = New SqlParameter("@telefono", objCliente.Telefono)
             Dim domicilio As SqlParameter = New SqlParameter("@domicilio", objCliente.Domicilio)
-            Dim idEstado As SqlParameter = New SqlParameter("@idEstado", objCliente.IdEstado)
+            Dim idEstado As SqlParameter = New SqlParameter("@idEstado", objCliente.Estado)
             Dim clave As SqlParameter = New SqlParameter("@clave", objCliente.Clave)
             Dim correo As SqlParameter = New SqlParameter("@correo", objCliente.Correo)
-            Dim idProvincia As SqlParameter = New SqlParameter("@idProvincia", objCliente.IdProvincia)
-            Dim idLocalidad As SqlParameter = New SqlParameter("@idLocalidad", objCliente.IdLocalidad)
+            Dim idProvincia As SqlParameter = New SqlParameter("@idProvincia", objCliente.Provincia)
+            Dim idLocalidad As SqlParameter = New SqlParameter("@idLocalidad", objCliente.Localidad)
             Dim idTipoRegistro As SqlParameter = New SqlParameter("@idTipoRegistro", objCliente.IdTipoRegistro)
 
             Dim command As SqlCommand = New SqlCommand(consulta, conn)
@@ -39,13 +43,19 @@ Public Class DataAccessLayer
             command.Parameters.Add(idLocalidad)
             command.Parameters.Add(idTipoRegistro)
 
-            command.ExecuteNonQuery()
+            filasAfectadas = command.ExecuteNonQuery()
+
+            Return filasAfectadas
+
         Catch ex As Exception
+            Debug.WriteLine(objCliente.Estado)
             Debug.WriteLine("ERROR:" & ex.Message)
+
+            Return filasAfectadas
         Finally
             conn.Close()
         End Try
-    End Sub
+    End Function
 
     Public Sub InsertarTransporte(objTransporte As Transporte)
 
@@ -118,4 +128,114 @@ Public Class DataAccessLayer
         End Try
 
     End Sub
+
+    'METODOS DE BUSQUEDA
+
+    Public Function BuscarClientes() As List(Of Cliente)
+
+        Dim clientes As New List(Of Cliente)
+
+        Try
+            conn.Open()
+
+            Dim query As String = $"SELECT C.dniCliente, C.apellidos, C.nombres, C.telefono, E.descripcion, P.provincia, L.localidad
+	                                    FROM Clientes C
+	                                        JOIN Estados E ON C.idEstado = E.idEstado
+	                                        JOIN Provincias P ON C.idProvincia = P.idProvincia
+	                                        JOIN Localidades L ON C.idLocalidad = L.idLocalidad"
+
+            Dim cmd As New SqlCommand(query, conn) With {
+                .CommandType = CommandType.Text
+            }
+
+            Dim reader As SqlDataReader = cmd.ExecuteReader()
+
+            While reader.Read
+                clientes.Add(New Cliente() With {
+                    .DniCliente = Integer.Parse(reader("dniCliente").ToString),
+                    .Apellidos = reader("apellidos").ToString,
+                    .Nombres = reader("nombres").ToString,
+                    .Telefono = reader("telefono").ToString,
+                    .Estado = reader("descripcion").ToString,
+                    .Provincia = reader("provincia").ToString,
+                    .Localidad = reader("localidad").ToString
+                })
+
+            End While
+
+        Catch ex As Exception
+            Debug.WriteLine("ERROR:" & ex.Message)
+        Finally
+            conn.Close()
+        End Try
+
+        Return clientes
+    End Function
+
+    Public Function BuscarEmpleados() As List(Of Empleado)
+        Dim empleados As New List(Of Empleado)
+
+        Try
+            conn.Open()
+
+            Dim query As String = $"SELECT EM.dniEmpleado, EM.apellidos, EM.nombres, EM.porcComision, ES.descripcion, EM.correo
+	                                    FROM Empleados EM
+	                                    JOIN Estados ES ON EM.idEstado = ES.idEstado"
+
+            Dim cmd As New SqlCommand(query, conn) With {
+                    .CommandType = CommandType.Text
+            }
+
+            Dim reader As SqlDataReader = cmd.ExecuteReader()
+
+            While reader.Read
+                empleados.Add(New Empleado() With {
+                    .DniEmpleado = Integer.Parse(reader("dniEmpleado").ToString),
+                    .Apellidos = reader("apellidos").ToString,
+                    .Nombres = reader("nombres").ToString,
+                    .PorcComision = Integer.Parse(reader("porcComision").ToString),
+                    .IdEstado = reader("descripcion").ToString,
+                    .Correo = reader("correo").ToString
+                })
+            End While
+
+        Catch ex As Exception
+            Debug.WriteLine("ERROR: " & ex.Message)
+        Finally
+            conn.Close()
+        End Try
+
+        Return empleados
+    End Function
+
+    Public Function BuscarSolicitudes() As List(Of Solicitud)
+        Dim solicitudes As New List(Of Solicitud)
+
+        Return solicitudes
+    End Function
+
+    Public Function BuscarTransportes() As List(Of Transporte)
+        Dim transportes As New List(Of Transporte)
+
+        Return transportes
+    End Function
+
+    Public Function BuscarProvincias() As List(Of Provincia)
+        Dim provincias As New List(Of Provincia)
+
+        Return provincias
+    End Function
+
+    Public Function BuscarEstados() As List(Of Estado)
+        Dim estados As New List(Of Estado)
+
+        Return estados
+    End Function
+
+    Public Function BuscarLocalidades() As List(Of Localidad)
+        Dim localidades As New List(Of Localidad)
+
+        Return localidades
+    End Function
+
 End Class

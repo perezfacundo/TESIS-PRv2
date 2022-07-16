@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="agregarCliente.aspx.vb" Inherits="TESIS_PRv2.agregarCliente" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="nuevoCliente.aspx.vb" Inherits="TESIS_PRv2.agregarCliente" %>
 
 <!DOCTYPE html>
 
@@ -29,7 +29,14 @@
             Domicilio<asp:TextBox ID="txtDomicilio" runat="server"></asp:TextBox>
             <br />
             <br />
-            Clave<asp:TextBox ID="txtClave" runat="server"></asp:TextBox>
+            Estado<asp:DropDownList ID="ddlEstado" runat="server" DataSourceID="SqlDataSource3" DataTextField="descripcion" DataValueField="idEstado"></asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:TESIS-PRv2ConnectionString %>" SelectCommand="SELECT * FROM Estados WHERE idTipoRegistro = 1"></asp:SqlDataSource>
+            <br />
+            <br />
+            Clave<asp:TextBox ID="txtClave1" runat="server"></asp:TextBox>
+            <br />
+            <br />
+            Repetir clave<asp:TextBox ID="txtClave2" runat="server"></asp:TextBox>
             <br />
             <br />
             Correo<asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox>
@@ -53,6 +60,9 @@
             <br />
             <asp:Button ID="cmdGuardar" runat="server" Text="Guardar" />
             <asp:Button ID="cmdCancelar" runat="server" Text="Cancelar" />
+            <br />
+            <br />
+            <asp:Label ID="lblResultado" runat="server"></asp:Label>
         </div>
     </form>
 </body>

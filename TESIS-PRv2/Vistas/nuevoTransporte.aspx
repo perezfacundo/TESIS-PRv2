@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="agregarTransporte.aspx.vb" Inherits="TESIS_PRv2.agregarTransporte" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="nuevoTransporte.aspx.vb" Inherits="TESIS_PRv2.agregarTransporte" %>
 
 <!DOCTYPE html>
 

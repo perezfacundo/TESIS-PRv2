@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="agregarEmpleado.aspx.vb" Inherits="TESIS_PRv2.agregarEmpleado" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="nuevoEmpleado.aspx.vb" Inherits="TESIS_PRv2.agregarEmpleado" %>
 
 <!DOCTYPE html>
 
